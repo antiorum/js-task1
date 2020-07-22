@@ -1,0 +1,56 @@
+.flex-container {
+  display: flex;
+  margin-left: 20%;
+  margin-right: 20%;
+  flex-wrap: wrap; }
+
+.cards-container {
+  width: 60%;
+  justify-content: space-evenly;
+  margin-right: 3%;
+  flex-wrap: wrap;
+  background-color: gray;
+  display: flex; }
+
+.users-container {
+  width: 35%;
+  background-color: black; }
+
+.stories-container {
+  height: 50px;
+  background-color: aqua;
+  width: 60%;
+  margin-top: 3%; }
+
+.card {
+  width: 120px;
+  height: 200px; }
+
+.first {
+  background-color: green; }
+
+.second {
+  background-color: aqua; }
+
+.third {
+  background-color: bisque; }
+
+.fourth {
+  background-color: darkmagenta; }
+
+.five {
+  background-color: hotpink; }
+
+.six {
+  background-color: navajowhite; }
+
+@media all and (max-width: 800px) {
+  .flex-container {
+    flex-direction: column; }
+  .cards-container {
+    width: 100%; }
+  .stories-container {
+    width: 100%; }
+  .users-container {
+    margin-top: 3%;
+    width: 100%; } }
