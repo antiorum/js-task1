@@ -1,11 +1,13 @@
 .users-container
+  height: 0
   display: flex
   width: 350px
-  height: 600px
   flex-grow: 0
   flex-shrink: 0
   flex-direction: column
   justify-content: space-between
+  overflow: visible
+  margin-left: 1%
 
 .users-header
   background-color: #4b9ae7
@@ -43,7 +45,6 @@
   background-color: white
   flex-grow: 1
   border-radius: 5px
-  height: 300px
 
 .users-list
   flex-basis: 50%
@@ -51,7 +52,6 @@
   flex-shrink: 1
   flex-direction: column
   background-color: white
-  overflow: auto
 
 .user-in-room
   padding-left: 2%
