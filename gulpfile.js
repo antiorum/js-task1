@@ -5,13 +5,17 @@ const sass = require('gulp-sass');
 const uglify = require('gulp-uglify-es').default;
 const cleanCSS = require('gulp-clean-css');
 const pug = require('gulp-pug');
-const del = require('del');
 
 function browsersync() {
   browserSync.init({
-    server: { baseDir: 'app/' },
+    server: { baseDir: 'dist/' },
     notify: false
   });
+}
+
+function images() {
+  return src('app/images/*.png')
+    .pipe(dest('dist/images/'));
 }
 
 function styles() {
@@ -19,7 +23,7 @@ function styles() {
     .pipe(sass())
     .pipe(concat('app.min.css'))
     .pipe(cleanCSS())
-    .pipe(dest('app/css/'));
+    .pipe(dest('dist/css/'));
 }
 
 function scripts() {
@@ -28,44 +32,29 @@ function scripts() {
   ])
     .pipe(concat('main.min.js'))
     .pipe(uglify())
-    .pipe(dest('app/js/'))
+    .pipe(dest('dist/js/'))
     .pipe(browserSync.stream());
 }
 
 function compilepug() {
   return src('app/pug/index.pug')
     .pipe(pug())
-    .pipe(dest('app/'))
+    .pipe(dest('dist/'))
     .pipe(browserSync.stream());
 }
 
 function startwatch() {
   watch([ 'app/pug/*.pug' ], compilepug);
   watch([ 'app/sass/*.sass' ], styles);
+  watch([ 'app/images/*.png' ], images);
   watch([ 'app/js/*.js', '!app/js/*.min.js' ], scripts);
   watch('app/*.html').on('change', browserSync.reload);
 }
 
-function cleandist() {
-  return del('dist/**/*', { force: true });
-}
-
-function copybuild() {
-  return src([
-    'app/css/**/*.min.css',
-    'app/js/**/*.min.js',
-    'app/*.html',
-    'app/images/*.png'
-  ], {
-    base: 'app'
-  }).pipe(dest('dist'));
-}
 
 exports.browsersync = browsersync;
 exports.styles = styles;
 exports.scripts = scripts;
 exports.pug = compilepug;
 
-exports.build = series(cleandist, styles, scripts, compilepug, copybuild);
-
-exports.default = parallel(styles, scripts, compilepug, browsersync, startwatch);
+exports.default = parallel(images, styles, scripts, compilepug, browsersync, startwatch);

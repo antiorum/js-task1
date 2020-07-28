@@ -1,11 +1,11 @@
 .users-container
   display: flex
-  flex-basis: 350px
+  width: 350px
+  height: 600px
   flex-grow: 0
   flex-shrink: 0
   flex-direction: column
   justify-content: space-between
-  align-self: flex-start
 
 .users-header
   background-color: #4b9ae7
@@ -14,6 +14,7 @@
   align-items: center
   justify-content: center
   height: 50px
+  flex-shrink: 0
 
 .users-remained
   padding-left: 2%
@@ -21,7 +22,8 @@
   font-size: large
   display: flex
   align-items: center
-  height: 40px
+  height: 50px
+  flex-shrink: 0
   border-bottom: 1px solid #edf2f6
   justify-content: space-between
 
@@ -38,10 +40,18 @@
 .members
   display: flex
   flex-direction: column
-  height: content-box
   background-color: white
   flex-grow: 1
   border-radius: 5px
+  height: 300px
+
+.users-list
+  flex-basis: 50%
+  display: flex
+  flex-shrink: 1
+  flex-direction: column
+  background-color: white
+  overflow: auto
 
 .user-in-room
   padding-left: 2%
@@ -57,13 +67,21 @@
   order: 1
   margin-left: 3%
   margin-right: 3%
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+
+.user-name p
+  text-overflow: ellipsis
 
 .user-avatar
+  display: block
   width: 30px
   height: 30px
   background-color: lightgrey
   border-radius: 50%
   order: 0
+  flex-shrink: 0
   padding: 1%
 
 .user-avatar img
