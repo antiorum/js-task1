@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+    head
+        title= "ScrumPoker"
+        link(rel="stylesheet" href="css/app.min.css")
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap")
+    body
+        .page-header
+            .header-text Room1
+            .user-in-header
+                p master
+                img(src="images/user.png", height="50")
+        .flex-container
+            span.story-header Story: "Выбрать карту"
+            br
+        .flex-container
+            include cards
+            include users
+            include stories

@@ -1,0 +1,37 @@
+- var buttons = [{title:'New', img: 'images/plus.png' }, {title:'Edit', img: 'images/edit.png' }]
+- var insets = [{title:'Active Stories', count: 2 }, {title:'Completed Stories', count: 3 }]
+- var items = ['Выбрать карту', 'Пригласить участника']
+- var insetclass = "stories-inset";
+
+.stories-container
+    .stories-header
+        .stories-header-insets
+            for j in insets
+                if j.title !== 'Active Stories'
+                    div(class=insetclass)
+                        p=j.title
+                        .inset-stories-count=j.count
+                else
+                    div(class=insetclass+" inset-selected")
+                        p=j.title
+                        div(class="inset-stories-count inset-stories-count-selected")=j.count
+                        .down
+        .stories-header-buttons
+            for i in buttons
+                .stories-button
+                    img(src=i.img height="25")
+                    p=i.title
+    .stories-body
+        for k in items
+            if k!=='Выбрать карту'
+                .stories-item
+                    .stories-item-name
+                        img(src="images/list.png" height="15")
+                        p=k
+                    .stories-item-delete
+                        img(src="images/delete.png" height="15")
+            else
+                .stories-item.stories-item-selected
+                    .stories-item-name
+                        img(src="images/list.png" height="15")
+                        p=k

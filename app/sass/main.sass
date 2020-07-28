@@ -1,141 +1,32 @@
 body
   background-color: #edf2f6
   align-items: center
+  margin: 0
+  padding: 0
   font-family: 'Poppins', sans-serif
 
 .text-center
   text-align: center
   vertical-align: middle
 
-.story-header
-  font-size: 20px
-
 .flex-container
   display: flex
-  margin-left: 20%
-  margin-right: 20%
+  margin-left: 10%
+  margin-right: 10%
   flex-wrap: wrap
-
-.cards-container
-  width: 60%
-  justify-content: space-evenly
-  flex-wrap: wrap
-  display: flex
-  align-items: center
-
-.users-container
-  display: flex
-  width: 35%
-  margin-left: 3%
-  flex-direction: column
   justify-content: space-between
 
-.stories-container
-  height: 50px
-  background-color: aqua
-  width: 60%
-  margin-top: 3%
-
-.card
-  width: 120px
-  height: 160px
-  border-radius: 5%
-  margin: 5px 5px
-
-.first
-  background-color: green
-
-.second
-  background-color: aqua
-
-.third
-  background-color: bisque
-
-.fourth
-  background-color: darkmagenta
-
-.five
-  background-color: hotpink
-
-.six
-  background-color: navajowhite
-
-
-.members
-  display: flex
-  flex-direction: column
-  height: content-box
-  background-color: white
-  flex-grow: 1
-  border-radius: 5px
-
-.users-header
-  background-color: #4b9ae7
-  border-radius: 5px 5px 0 0
-  display: flex
-  align-items: center
-  justify-content: center
-  height: 30px
-
-.users-remained
-  padding-left: 2%
-  background-color: white
-  font-size: large
-  display: flex
-  align-items: center
-  height: 30px
-  border-bottom: 1px solid #edf2f6
-
-.user-in-room
-  padding-left: 2%
-  display: flex
-  align-items: center
-  height: 30px
-  border-bottom: 1px solid #edf2f6
-
-.users-buttons
-  display: flex
-  justify-content: space-around
-  align-items: center
-  height: 120px
-
-.invite-box
-  background-color: white
-  margin-top: 3%
-  border-radius: 5px
-
-.white-button
-  height: 30px
-  width: 160px
-  border-radius: 5px
-  border-style: solid
-  border-color: #4b9ae7
-  border-width: thin
-  display: flex
-  align-items: center
-  justify-content: center
-  color: #4b9ae7
-  font-size: small
-
-.blue-button
-  height: 30px
-  background-color: #4b9ae7
-  border-radius: 5px
-  margin: 15px 15px
-  display: flex
-  align-items: center
-  justify-content: center
-  color: white
-  font-size: small
-
-@media all and (max-width: 800px)
+@media all and (max-width: 1120px)
   .flex-container
     flex-direction: column
+    align-items: center
+    justify-content: center
   .cards-container
     width: 100%
   .stories-container
     width: 100%
+    flex-grow: 1
   .users-container
     margin-left: 0
     margin-top: 3%
-    width: 100%
+    width: 350px
