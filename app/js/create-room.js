@@ -16,9 +16,10 @@ async function handleFunction(event) {
   let password = '';
   let name = event.target[1].value;
   let deckId = event.target[2].value.split(' ')[0];
-  if (state.currentUser == null) {
-    await service.auth(event.target[0]);
-  }
+
+  await service.auth(event.target[0].value);
+
   let roomId = await service.createRoom(password, name, '', deckId);
+  await service.getRoom(roomId);
   window.location = `/?${roomId}#room`;
 }
