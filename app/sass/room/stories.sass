@@ -44,14 +44,15 @@
 .stories-inset
   display: flex
   align-items: center
+  flex-shrink: 0
 
 .stories-inset p
   margin: 0 10px
 
-.stories-inset:hover
-  cursor: pointer
-  background-color: #4b9ae7
-  color: white
+//.stories-inset:hover
+//  cursor: pointer
+//  background-color: #4b9ae7
+//  color: white
 
 .inset-selected
   font-weight: bold
@@ -90,11 +91,11 @@
   align-items: center
   flex-grow: 1
 
-.stories-item-name:hover
-  cursor: pointer
-
 .stories-item-name img
   margin: 0 3%
+
+.stories-item-name p:hover
+  cursor: pointer
 
 .stories-item-delete
   height: 30px
@@ -107,5 +108,8 @@
 .stories-item-delete:hover
   cursor: pointer
 
-.stories-item-selected
+.stories-item:hover
   background-color: lightgrey
+
+.stories-active-story
+  background-color: #4b9ae7

@@ -1,15 +1,15 @@
 - var users = ['master', 'user', 'ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd']
-- var buttons = ['Reset timer', 'Finish']
+- var buttons = ['Reset Discussion', 'Finish', 'Begin Discussion']
 
 
 .users-container
     .members
-        .users-header Waiting for user to vote
+        .users-header#users-header Waiting for user to vote
         .users-remained Remains:
-            .timer
+            .timer#timer
                 img(src="images/timer.png" height="25")
-                b 04:24:24
-        .users-list
+                b#timer-value 00:00:00
+        .users-list#users-list
             for i in users
                 .user-in-room
                     .user-name
@@ -18,10 +18,10 @@
                         img(src="images/user.png", height=25)
                     if i == 'master'
                         img(src="images/verified.png", height=20)
-        .users-buttons
+        .users-buttons#users-buttons
             for j in buttons
                 .discussion-management-button=j
     .invite-box
         h3.text-format Invite new member
         p.text-format Copy room url to clipboard and sent it to new member
-        .invite-button Copy url
+        .invite-button#invite-button Copy url

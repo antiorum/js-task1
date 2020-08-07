@@ -1,0 +1,28 @@
+- var buttons = [{title:'New', img: 'images/plus.png' }, {title:'Edit', img: 'images/edit.png' }]
+- var insets = [{title:'Active Stories', count: 2 }, {title:'Completed Stories', count: 3 }]
+- var items = ['Выбрать карту', 'Пригласить участника']
+
+.stories-container
+    .stories-header
+        .stories-header-insets
+            .stories-inset
+                p#stories-count Room Stories (completed: 0)
+        //.stories-header-buttons
+        //    for i in buttons
+        //        .stories-button
+        //            img(src=i.img height="25")
+        //            p=i.title
+    .stories-body#stories-container
+        for k in items
+            if k!=='Выбрать карту'
+                .stories-item
+                    .stories-item-name
+                        img(src="images/list.png" height="15")
+                        p=k
+                    .stories-item-delete
+                        img(src="images/delete.png" height="15")
+            else
+                .stories-item.stories-item-selected
+                    .stories-item-name
+                        img(src="images/list.png" height="15")
+                        p=k

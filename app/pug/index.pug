@@ -5,16 +5,18 @@ html(lang="en")
         link(rel="stylesheet" href="css/app.min.css")
         link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap")
     body
-        .page-header
-            .header-text Room1
-            .user-in-header
-                p master
-                img(src="images/user.png", height="50")
-        .flex-container
-            span.story-header Story: "Выбрать карту"
-            br
-        .flex-container
-            include cards
-            include users
-            include stories
-            .users-container
+        #creation-room.hidden
+            include create-room
+        #sign-in.hidden
+            include sign
+        #room.hidden
+            include room/header
+            .flex-container
+                span.story-header#story-header Story: "Выбрать карту"
+                br
+            .flex-container
+                include room/cards
+                include room/users
+                include room/stories
+                .users-container
+        script(src="js/main.min.js")

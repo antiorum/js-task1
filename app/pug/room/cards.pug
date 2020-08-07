@@ -1,8 +1,8 @@
 - var cards = [{value: "0", symbol: "0"},{value: "1/2", symbol: "1/2"},{value: "1", symbol: "1"},{value: "2", symbol: "2"},{value: "3", symbol: "3"},{value: "5", symbol: "5"},{value: "8", symbol: "8"},{value: "13", symbol: "13"},{value: "20", symbol: "20"},{value: "40", symbol: "40"},{value: "100", symbol: "100"},{value: "?", symbol: "?"},{value: "c", symbol: "☕"}]
 
-.cards-container
+.cards-container#cards-container
     for i in cards
         .card
             p.card-header=i.value
             .card-inner=i.symbol
-
+.cards-container.hidden#discussion-result-container
